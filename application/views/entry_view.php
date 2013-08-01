@@ -352,7 +352,24 @@ foreach ($results as $result) {
 			
 
 		</tr>			
-		<tr class="altrow">
+		
+				<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Distribution</label>
+			</td>
+			<td class="inputtd">
+				<?php echo $result->distribution;?>
+			</td>
+			<td class="columnname">
+				<label>Characteristics</label>
+			</td>
+			<td class="datatd">
+				<?php echo $result->characteristics;?>
+			</td>
+		</tr>		
+		
+		<tr>
 			
 			<td class="columnname">
 				<label>Reference</label>

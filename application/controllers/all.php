@@ -20,15 +20,30 @@ class All extends CI_Controller {
 	public function index()
 	{
 		
-		$this->load->helper(array('form', 'url','email','string'));
-		$data['resultflag'] = '1';
-		$data['results'] = $this->mbg_model->getAllEntry();
+		$this->load->helper(array('form', 'url','email','string','csv_helper'));
+		$data['resultflag'] = TRUE;
+		$temp= $this->mbg_model->getAllEntry();
+		$data['results'] = $temp;
 		$this->load->view('all_view',$data);
+		//array_to_csv($temp,  "test.csv");
 		
 	}
 	
+	public function saveasCSV(){
+		
+		$this->mbg_model->saveCSV();
+		$data['resultflag'] = TRUE;
+		$data['results'] = $this->mbg_model->getAllEntry();
+		$this->load->view('all_view',$data);
+	}
 	
-	
+		public function saveasCSVthdbh(){
+		
+		$this->mbg_model->saveCSVthdbh();
+		$data['resultflag'] = TRUE;
+		$data['results'] = $this->mbg_model->getAllEntry();
+		$this->load->view('all_view',$data);
+	}
 
 }
 

@@ -29,9 +29,8 @@
 			<a class='menuheader'  href='<?php echo base_url();?>index.php/search'>Search</a>
 			<a class='menuheader'   href='<?php echo base_url();?>index.php/add_entry'>Add Entry</a>
 			<a class='menuheader'   href='<?php echo base_url();?>index.php/all'>All Entries</a>
-			<a class='menuheader'   href='<?php echo base_url();?>'>Import</a>
+			<a class='menuheader'   href='<?php echo base_url();?>index.php/import'>Import</a>
 			
-			<a class='menuheader'   href='<?php echo base_url();?>'>Export</a>
 			
 	</div>
 
@@ -44,6 +43,6 @@
 
 
 </head>
-<body>
+<body class='loading'>
 	
-<div id="wrapper">
+<div id="wrapper" class="hiddendiv loading">

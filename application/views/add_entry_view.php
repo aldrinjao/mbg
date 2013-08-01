@@ -328,8 +328,26 @@ if($file_error){
 			</td>
 
 
-		</tr>		
+		</tr>
+		
 		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Distribution</label>
+			</td>
+			<td class="inputtd">
+				<input name="idistribution"/>
+			</td>
+			<td class="columnname">
+				<label style='font-size:11px;'>Characteristics</label>
+			</td>
+			<td class="datatd">
+				<input name="icharac" />
+			</td>
+		</tr>		
+		
+					
+		<tr>
 			
 			<td class="columnname">
 				<label>Reference</label>

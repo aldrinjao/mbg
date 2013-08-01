@@ -118,7 +118,9 @@ class Add_entry extends CI_Controller {
 					$this->input->post('ilong'),
 					$this->input->post('ilat'),
 					$this->input->post('idplanted'),
-					$this->input->post('iseedyear')
+					$this->input->post('iseedyear'),
+					$this->input->post('idistribution'),
+					$this->input->post('icharac')
 					
 					);
 		
@@ -263,7 +265,10 @@ function update_entry()
 					$this->input->post('ilong'),
 					$this->input->post('ilat'),
 					$this->input->post('idplanted'),
-					$this->input->post('iseedyear')
+					$this->input->post('iseedyear'),
+					$this->input->post('idistribution'),
+					$this->input->post('icharac')
+					
 					
 					);
 		

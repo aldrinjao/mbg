@@ -2,8 +2,8 @@
 	echo form_open('search/searchby');
 ?>
 
-
-	<table id="searchformcont">
+<div id="searchformcont">
+	<table >
 		<tr>
 			<th colspan="2"><label>Search</label></th>
 			
@@ -83,7 +83,7 @@
 	
 	
 </script>
-
+</div>
 <?php
 
 	echo form_close();

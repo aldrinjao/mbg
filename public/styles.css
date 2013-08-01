@@ -79,13 +79,27 @@ body{
 
 /*start of body*/
 #wrapper{
+	position:relative;
+	overflow:hidden;
 	width: 100%;
 	min-width:1000px;
 	margin:auto;
 	min-height:700px;
+	padding-bottom:5px;
+}
+
+#searchformcont table{
+	
+	padding: 10px 5px 20px 5px;
+	background: rgba(232, 248, 234, 0.5);
+	border: 1px solid gray;
+	border-radius: 10px;
+	margin:auto;
+	box-shadow: 2px 2px 2px 2px rgba(1,1,1,.1);
 }
 
 #searchformcont{
+
 	margin:auto;
 	padding-top:40px;
 	
@@ -123,6 +137,7 @@ padding: 4% 4% 0px 0px;
 	width:90%;
 	background:red;
 	margin-top:20px;
+	box-shadow: 2px 2px 2px 2px rgba(1,1,1,.1);
 }
 
 #picture_container{
@@ -133,7 +148,8 @@ padding: 4% 4% 0px 0px;
 	vertical-align:middle; 
 	text-align:center;
 	border:1px solid rgba(0,0,0,.4);
-	position:relative;	
+	position:relative;
+	padding:10px 10px 10px 10px	
 }
 
 #picture_container2{
@@ -141,6 +157,10 @@ padding: 4% 4% 0px 0px;
 	width:98%;
 	background-position: center center;
 	position: relative;
+}
+
+#picture_container2 img{
+	box-shadow: 2px 2px 2px 2px rgba(1,1,1,.1);
 }
 
 #picture_container2 input{
@@ -254,6 +274,7 @@ label{
 /*end of body*/
 /*start of footer*/
 #footer{
+	margin-top:10px;
 	height:100px;
 	width:100%;
 	bottom:0;
@@ -264,4 +285,122 @@ label{
 /*end of footer*/
 
 
+/*start of import*/
+#uploaddivcont{
+	position:absolute;
+	left: 20px;
+	top: 20px;
+	padding: 10px 5px 20px 5px;
+	background:rgba(232, 248, 234, 0.5);
+	border:1px solid gray;
+	border-radius: 10px;
+	width:340px;
+	height: 50px;
+	box-shadow: 2px 2px 2px 2px rgba(1,1,1,.1);
+}
 
+
+
+#importtable_length{
+	position:absolute;
+	left:0px;
+	top:100px;
+	
+}
+
+#importtable_filter{
+	position:absolute;
+	right:0px;
+	top:100px;
+	
+}
+#importtable_wrapper{
+	margin:auto;
+	margin-top:160px;
+	position:static;
+	overflow:auto;	
+}
+
+#importtable th{
+	min-width:50px;
+	
+}
+
+#filenamecont{
+	padding: 15px 5px 15px 5px;
+	background:rgba(232, 248, 234, 0.5);
+	border:1px solid gray;
+	border-radius: 10px;
+	position: absolute;
+	left: 400px;
+	top: 20px;
+	height: 50px;
+	width:340px;
+	box-shadow: 2px 2px 2px 2px rgba(1,1,1,.1);
+}
+
+#filenamecont label{
+	
+	font-size:20px;
+}
+
+.hiddendiv{
+	display:none;
+	
+}
+
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://localhost/mbg/public/images/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+#all_result_table_wrapper{
+	padding-top:120px;
+	
+}
+
+#buttondiv{
+	position:absolute;
+	top:20px;
+	left:20px;
+	padding: 15px 5px 15px 5px;
+	background:rgba(232, 248, 234, 0.5);
+	border:1px solid gray;
+	border-radius: 10px;
+	height: 50px;
+	width:340px;
+	box-shadow: 2px 2px 2px 2px rgba(1,1,1,.1);
+}
+}
+
+#buttondiv form input{
+	margin-right:15px;
+	
+}

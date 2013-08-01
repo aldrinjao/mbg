@@ -1,7 +1,6 @@
 
 <?php
 	include('header.php');
-
 			if($resultflag==1){
 				
 				
@@ -100,6 +99,23 @@
 	
 	
 </table>
+<div id="buttondiv">
+<?php
+echo form_open('all/saveasCSV');
+?>
+<input type='submit' value='download' /><label>all entries as csv in darwin core format </label>
+<?php
+echo form_close();
+?>
+
+<?php
+echo form_open('all/saveasCSVthdbh');
+?>
+<input type='submit' value='download' /><label>all entries as csv (additional attributes)</label>
+<?php
+echo form_close();
+?>
+</div>
 <script>
 
 
@@ -116,5 +132,5 @@
 			}
 
 	
-
+	include('footer.php');
 ?>

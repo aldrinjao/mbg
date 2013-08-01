@@ -312,8 +312,22 @@ foreach ($results as $result) {
 			</td>
 		</tr>		
 
-
 		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Distribution</label>
+			</td>
+			<td class="inputtd">
+				<input name="idistribution" value="<?php echo $result->distribution;?>"/>
+			</td>
+			<td class="columnname">
+				<label>Characteristics</label>
+			</td>
+			<td class="datatd">
+				<input name="icharac" value="<?php echo $result->characteristics;?>"/>
+			</td>
+		</tr>		
+		<tr>
 			
 			<td class="columnname">
 				<label>Reference</label>
