@@ -45,4 +45,4 @@
 </head>
 <body class='loading'>
 	
-<div id="wrapper" class="hiddendiv loading">
+<div id="wrapper" class="hiddendiv">
