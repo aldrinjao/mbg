@@ -25,11 +25,11 @@
 
 
 	<div id ="navbar">
-			<a class='menuheader'  href='<?php echo base_url();?>'>Home</a>
-			<a class='menuheader'  href='<?php echo base_url();?>index.php/search'>Search</a>
-			<a class='menuheader'   href='<?php echo base_url();?>index.php/add_entry'>Add Entry</a>
-			<a class='menuheader'   href='<?php echo base_url();?>index.php/all'>All Entries</a>
-			<a class='menuheader'   href='<?php echo base_url();?>index.php/import'>Import</a>
+			<a id='first' class='menuheader'  href='<?php echo base_url();?>'><label>Home</label></a>
+			<a class='menuheader'  href='<?php echo base_url();?>index.php/search'><label>Search</label></a>
+			<a class='menuheader'   href='<?php echo base_url();?>index.php/add_entry'><label>Add Entry</label></a>
+			<a class='menuheader'   href='<?php echo base_url();?>index.php/all'><label>All Entries</label></a>
+			<a class='menuheader'   href='<?php echo base_url();?>index.php/import'><label>Import</label></a>
 			
 			
 	</div>

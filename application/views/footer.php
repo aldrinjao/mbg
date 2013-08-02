@@ -2,8 +2,12 @@
 </div><!--end of wrapper div-->
 
 
-<footer id='footer'></footer>
+<footer id='footer'>
+	<div id="footerdiv"></div>
+	
+</footer>
 </body>
+
 <div class="modal"><!-- Place at bottom of page --></div>
 <!-- additional script-->
 <script>
