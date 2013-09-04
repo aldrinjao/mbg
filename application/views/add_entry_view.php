@@ -5,15 +5,19 @@
 	
 	echo form_open_multipart('/add_entry/insert');
 
-if($inserted){
-	
-	echo "new entry added!";	
-}
-
-if($file_error){
-	foreach ($error as $ierror) {
-		echo $ierror;
+if($inserted || $file_error){
+	echo "<div class='deletedivcont' style='margin:auto;margin-top:40px;width:300px;padding:5px 5px 15px 15px;'>";
+	if($inserted){
+		
+		echo "<label>new entry added!</label>";	
 	}
+	
+	if($file_error){
+		foreach ($error as $ierror) {
+			echo "<label>".$ierror."</label>";
+		}
+	}
+	echo "</div>";
 }
 ?>
 
@@ -42,26 +46,32 @@ if($file_error){
 				</div>
 			</td>
 		</tr>
+
 		<tr>
 			<td class="columnname">
-				<label>Basis of Record</label>
+				<label>Synonym</label>
 			</td>
+
 			<td class="inputtd">
-				<input name='ibasis'/>
+				<input name='isynonym'/>
 			</td>
+
 			<td class="columnname">
 				<label>Kingdom:</label>
-			</td>
+			</td>	
+
 			<td class="inputtd">
 				<input name="ikingdom"/>
 			</td>
 			
 		</tr>
+
 		<tr class="altrow">
 
 			<td class="columnname">
 				<label>Continent Ocean</label>
 			</td>
+
 			<td class="inputtd">
 				<input name='iocean'/>
 			</td>
@@ -69,6 +79,7 @@ if($file_error){
 			<td class="columnname">
 				<label>Phylum</label>
 			</td>
+
 			<td class="inputtd">
 				<input name='iphylum' />
 			</td>
@@ -79,6 +90,7 @@ if($file_error){
 			<td class="columnname">
 				<label>Country</label>
 			</td>
+
 			<td class="inputtd">
 				<input name='icountry'/>
 			</td>
@@ -86,24 +98,26 @@ if($file_error){
 			<td class="columnname">
 				<label>Class</label>
 			</td>
+
 			<td class="inputtd">
 				<input name='iclass'/>
 			</td>
 
 		</tr>
 		<tr class="altrow">
+
 			<td class="columnname">
 				<label>State Province</label>
 			</td>
-			<td class="inputtd">
-				<input name="iprovince"/>
-			</td>
-			
 
+			<td class="inputtd">
+				<input name="istateprovince"  value="<?php echo set_value('istateprovince');?>"/>
+			</td>
 
 			<td class="columnname">
 				<label>Order</label>
 			</td>
+
 			<td class="inputtd">
 				<input name="iorder"/>
 			</td>
@@ -115,56 +129,59 @@ if($file_error){
 			<td class="columnname">
 				<label>Locality</label>
 			</td>
+
 			<td class="inputtd">
-				<input name="iprovince"/>
+				<input name="ilocality"  value="<?php echo set_value('ilocality');?>"/>
 			</td>
 			
 			<td class="columnname">
-			
 				<label>Family</label>
 			</td>
+
 			<td class="inputtd">
 				<input name="ifamily"/>
 			</td>
 
 		</tr>
-		<tr class="altrow">
 
+		<tr class="altrow">
 
 			<td class="columnname">
 				<label>Threat Status</label>
 			</td>
+
 			<td class="inputtd">
 				<input name="ithreat"/>
 			</td>
 
-
 			<td class="columnname">
 				<label>Genus</label>
 			</td>
+
 			<td class="inputtd">
 				<input id="igenus" name="igenus"/>
 			</td>
 			
-			
 		</tr>
+
 		<tr>
-	
 	
 			<td class="columnname">
 				<label>Total Height(m)</label>
 			</td>
+
 			<td class="inputtd">
 				<input name="ith"/>
 			</td>
-
 			
 			<td class="columnname">
 				<label>Subgenus</label>
 			</td>
+
 			<td class="inputtd">
 				<input name="isubgenus"/>
 			</td>
+			
 		</tr>
 
 		<tr class="altrow">
@@ -225,7 +242,7 @@ if($file_error){
 				<label>National Status</label>
 			</td>
 			<td class="inputtd">
-				<input />
+				<input name="inationalstat"  value="<?php echo set_value('inationalstat');?>"/>
 			</td>
 			
 			
@@ -240,45 +257,41 @@ if($file_error){
 		
 		<tr class="altrow">
 			<td class="columnname">
-
-				Native Status
+				<label>Native Status</label> 
 			</td>
+
 			<td class="inputtd">
-				<input />
+				<input name="inativestat"  value="<?php echo set_value('inativestat');?>"/>
 			</td>
-
-			
 
 			<td class="columnname">
 				<label>Month Collected <span style='font-size:.8em;'>(mm)</span></label>
 			</td>
+
 			<td class="inputtd">
-				
 				<input name="imonthcollected"  value="<?php echo set_value('imonthcollected');?>"/>
-				
 			</td>
+
 		</tr>		
 
-
-
 		<tr>
+
 			<td class="columnname">
 				<label>Seed Year (yyyy)</label>
 			</td>
+
 			<td class="inputtd">
-				
 				<input name="iseedyear"/>
-				
 			</td>
 
 			<td class="columnname">
 				<label>Day Collected <span style='font-size:.8em;'>(dd)</span></label>
 			</td>
+
 			<td class="inputtd">
-				
 				<input name="idaycollected"  value="<?php echo set_value('idaycollected');?>"/>
-				
 			</td>
+
 		</tr>		
 
 		<tr class="altrow">
@@ -288,9 +301,7 @@ if($file_error){
 			</td>
 	
 			<td class="inputtd">
-				
 				<input name="ilat"/>
-				
 			</td>
 	
 			<td class="columnname">
@@ -298,35 +309,28 @@ if($file_error){
 			</td>
 	
 			<td class="inputtd">
-				
 				<input name="ilong"/>
-				
 			</td>
-
 
 		</tr>		
 
 		<tr>
+
 			<td class="columnname">
-			<label>Origin</label>
+				<label>Origin</label>
 			</td>
+	
 			<td class="inputtd">
-				
 				<input name="iorigin"/>
-				
 			</td>
 
-
 			<td class="columnname">
-			<label style='font-size:11px;'>Date Planted (YYYY-MM-DD)</label>
+				<label style='font-size:11px;'>Date Planted (YYYY-MM-DD)</label>
 			</td>
 			
 			<td class="inputtd">
-				
 				<input name="idplanted"/>
-				
 			</td>
-
 
 		</tr>
 		
@@ -335,42 +339,78 @@ if($file_error){
 			<td class="columnname">
 				<label>Distribution</label>
 			</td>
+
 			<td class="inputtd">
 				<input name="idistribution"/>
 			</td>
-			<td class="columnname">
-				<label style='font-size:11px;'>Characteristics</label>
-			</td>
-			<td class="datatd">
-				<input name="icharac" />
-			</td>
-		</tr>		
-		
-					
-		<tr>
+
 			
 			<td class="columnname">
 				<label>Reference</label>
 			</td>
-			<td class="inputtd" colspan="3" >
-				
+
+			<td class="inputtd" >
 				<input name="ireference"/>
-				
-			</td>
-			
-			
-		</tr>
+			</td>	
+		</tr>		
+
 		<tr>
-			<td colspan="3">
-				<input  type='submit'/>
-			</td>
+			<td class="columnname"   style="padding:5px 0px 5px 10px;" colspan="4"><label>Characteristics</label></td>
 		</tr>
+
+		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Habit</label>
+			</td>
+			<td class="inputtd">
+				<input name="ihabit"/>
+			</td>
+			<td class="columnname">
+				<label>Leaves/Fronds</label>
+			</td>
+			<td class="inputtd" >
+				<input name="ileaves"/>				
+			</td>
+		</tr>		
+
+
+		<tr>
+			<td class="columnname">
+				<label>Flowers</label>
+			</td>
+			<td class="inputtd">
+				<input name="iflowers"/>
+			</td>
+			<td class="columnname">
+				<label>Fruits/Seeds</label>
+			</td>
+			<td class="inputtd" >
+				<input name="ifruits"/>
+			</td>
+			
+		</tr>		
+		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Uses</label>
+			</td>
+			<td class="inputtd" colspan="3">
+				<input name="iuses"/>
+			</td>
+
+			
+		</tr>		
+		
+					
+
 	</tbody>
 	
 </table><!--end of 1st table-->
 
 
 <div id="right_panel">
+	<div class='deletedivcont'><input  type='submit'/></div>
 	<div id="picture_container">
 		<label>300px X 300px recommended(jpg|png|gif)</label>			
 			<input type="file" name="userfile" size="20" />

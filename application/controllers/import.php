@@ -74,7 +74,7 @@ class Import extends CI_Controller {
 			
 					$containerarray[$i][$j]=$csv[$i][$j];
 				}
-				//$this->mbg_model->addEntryfromCSV($containerarray[$i]);
+				$this->mbg_model->addEntryfromCSV($containerarray[$i]);
 			}
 		$data['filename']=$filepath;
 		$data['saved']=TRUE;

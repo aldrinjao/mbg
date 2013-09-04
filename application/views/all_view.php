@@ -103,7 +103,7 @@
 <?php
 echo form_open('all/saveasCSV');
 ?>
-<input type='submit' value='download' /><label>all entries as csv in darwin core format </label>
+<input type='submit' value='download' /><label>Darwin Core format </label>
 <?php
 echo form_close();
 ?>
@@ -111,7 +111,7 @@ echo form_close();
 <?php
 echo form_open('all/saveasCSVthdbh');
 ?>
-<input type='submit' value='download' /><label>all entries as csv (additional attributes)</label>
+<input type='submit' value='download' /><label>Darwin Core columns + extra attributes</label>
 <?php
 echo form_close();
 ?>

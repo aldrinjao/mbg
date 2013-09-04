@@ -5,8 +5,6 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/styles.css">
-	<link href='http://fonts.googleapis.com/css?family=Monsieur+La+Doulaise' rel='stylesheet' type='text/css'>
-	<link href="http://fonts.googleapis.com/css?family=Arizonia" rel="stylesheet" type="text/css">
 	
  	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   	<script type="text/javascript" charset="utf-8" src="<?php echo base_url();?>public/DataTables/media/js/jquery.js"></script>
@@ -18,7 +16,7 @@
 <div id = "headerdiv">
 
 <div id="mast" >
-	Makiling Botanic Garden
+	Makiling Botanic Gardens
 	
 </div>
 

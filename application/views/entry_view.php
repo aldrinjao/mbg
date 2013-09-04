@@ -33,11 +33,11 @@ foreach ($results as $result) {
 		</tr>
 		<tr>
 			<td class="columnname">
-				<label>Basis of Record</label>
+				<label>Synonym</label>
 			</td>
 			<td class="datatd">
 				<?php
-					echo $result->BasisOfRecord;
+					echo $result->Synonyms;
 				?>
 			</td>
 			<td class="columnname">
@@ -353,52 +353,105 @@ foreach ($results as $result) {
 
 		</tr>			
 		
-				<tr class="altrow">
+		<tr class="altrow">
 			
 			<td class="columnname">
 				<label>Distribution</label>
 			</td>
-			<td class="inputtd">
-				<?php echo $result->distribution;?>
-			</td>
-			<td class="columnname">
-				<label>Characteristics</label>
-			</td>
 			<td class="datatd">
-				<?php echo $result->characteristics;?>
+				<?php echo $result->Distribution;?>
 			</td>
-		</tr>		
-		
-		<tr>
-			
 			<td class="columnname">
 				<label>Reference</label>
 			</td>
-			<td class="datatd" colspan="3" style="padding: 10px 5px 10px 5px;">
+			<td class="datatd" >
 				<?php
 					echo $result->Reference;
 				?>
 			</td>
 			
+		</tr>		
+		
+		<tr>
+			
+			<td class="columnname"  style="padding:5px 0px 5px 10px;" colspan="4"><label>Characteristics</label></td>
+
 			
 		</tr>
+		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Habit</label>
+			</td>
+			<td class="datatd">
+				<?php echo $result->habits;?>
+			</td>
+			<td class="columnname">
+				<label>Leaves/Fronds</label>
+			</td>
+			<td class="datatd" >
+				<?php
+					echo $result->leaves;
+				?>
+			</td>
+			
+		</tr>		
+
+
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td>
+			
+			<td class="columnname">
+				<label>Flowers</label>
+			</td>
+			<td class="datatd">
+				<?php echo $result->flowers;?>
+			</td>
+			<td class="columnname">
+				<label>Fruits/Seeds</label>
+			</td>
+			<td class="datatd" >
+				<?php
+					echo $result->fruits;
+				?>
+			</td>
+			
+		</tr>		
+		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Uses</label>
+			</td>
+			<td class="datatd" colspan="3">
+				<?php echo $result->uses;?>
+			</td>
+
+			
+		</tr>		
+
+
+
+	</tbody>
+
+
+</table><!--end of 1st table-->
+
+<div id="right_panel">
+	
+	<div class='deletedivcont'
+		<?php 
+			if ($home){
+				echo "style='display:none;'";		
+			
+			}
+		?> 
+				
+	>
 				<?php  echo form_open_multipart('/add_entry/deleteEntry');?>
 				<input type="hidden" name="htaxonid" value="<?php echo $result->taxonid;?>" ></input>
 				<input style="float:left" type="submit" value="DELETE"  onclick="return confirm('Are you sure you want to delete this entry?')" />
 				<?php echo form_close();?>
 				<a href='<?php echo base_url();?>index.php/add_entry/edit/<?php echo $result->taxonid?>' style="float:right">EDIT</a>
-			</td>
-		</tr>
-	</tbody>
-	
-</table><!--end of 1st table-->
-
-<div id="right_panel">
+</div>	
 	<div id="picture_container">
 		<div id="picture_container2">
 			<image	style='width:300px;height:300px;' src='<?php echo base_url()."uploads/";
@@ -412,10 +465,12 @@ foreach ($results as $result) {
 			</image>
 		</div>
 	</div>
+	<div class="mapcontdiv">
 	<div id="map_container">
 		
 		
 		
+	</div>
 	</div>
 </div>
 	<script type="text/javascript"

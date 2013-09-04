@@ -67,7 +67,7 @@ class Search extends CI_Controller {
 		$id = $this->uri->segment(3);
 		$data2['id']=$id;
 		$data['results']= $this->mbg_model->getSingleEntry($id);
-		
+		$data['home']= FALSE; 
 		$data['input_error'] = FALSE;
 		 
 

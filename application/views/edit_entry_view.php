@@ -36,10 +36,10 @@ foreach ($results as $result) {
 		</tr>
 		<tr>
 			<td class="columnname">
-				<label>Basis of Record</label>
+				<label>Synonyms</label>
 			</td>
 			<td class="inputtd">
-				<input name='ibasis' value="<?php echo $result->BasisOfRecord;?>" />
+				<input name='isynonym' value="<?php echo $result->Synonyms;?>" />
 			</td>
 			<td class="columnname">
 				<label>Kingdom:</label>
@@ -88,7 +88,7 @@ foreach ($results as $result) {
 				<label>State Province</label>
 			</td>
 			<td class="inputtd">
-				<input name="iprovince" value="<?php echo $result->StateProvince;?>" />
+				<input name="istateprovince" value="<?php echo $result->StateProvince;?>" />
 			</td>
 			
 
@@ -108,7 +108,7 @@ foreach ($results as $result) {
 				<label>Locality</label>
 			</td>
 			<td class="inputtd">
-				<input name="iprovince" value="<?php echo $result->Locality;?>" />
+				<input name="ilocality" value="<?php echo $result->Locality;?>" />
 			</td>
 			
 			<td class="columnname">
@@ -217,7 +217,7 @@ foreach ($results as $result) {
 				<label>National Status</label>
 			</td>
 			<td class="inputtd">
-				<input />
+				<input name="inationalstat"  value="<?php echo $result->NationalStatus;?>"/>
 			</td>
 			
 			
@@ -236,7 +236,7 @@ foreach ($results as $result) {
 				Native Status
 			</td>
 			<td class="inputtd">
-				<input />
+				<input name="inativestat"  value="<?php echo $result->NativeStatus;?>"/>
 			</td>
 
 			
@@ -259,7 +259,7 @@ foreach ($results as $result) {
 			</td>
 			<td class="inputtd"    value="<?php echo $result->seedyear;?>">
 				
-				<input />
+				<input name="iseedyear"   value="<?php echo $result->seedyear;?>" />
 				
 			</td>
 
@@ -318,39 +318,78 @@ foreach ($results as $result) {
 				<label>Distribution</label>
 			</td>
 			<td class="inputtd">
-				<input name="idistribution" value="<?php echo $result->distribution;?>"/>
+				<input name="idistribution" value="<?php echo $result->Distribution;?>"/>
 			</td>
-			<td class="columnname">
-				<label>Characteristics</label>
-			</td>
-			<td class="datatd">
-				<input name="icharac" value="<?php echo $result->characteristics;?>"/>
-			</td>
-		</tr>		
-		<tr>
-			
 			<td class="columnname">
 				<label>Reference</label>
 			</td>
-			<td class="inputtd" colspan="3" >
+			<td class="inputtd">
 				
 				<input name="ireference" value="<?php echo $result->Reference;?>" />
 				
 			</td>
-		
-			
-			
-		</tr>
+
+		</tr>		
 		<tr>
-			<td colspan="3">
-				<input  type='submit'/>
-			</td>
+			
+			<td class="columnname"  style="padding:5px 0px 5px 10px;"  colspan="4"><label>Characteristics</label></td>
+
+			
 		</tr>
+		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Habit</label>
+			</td>
+			<td class="inputtd">
+				<input name="ihabit" value="<?php echo $result->habits;?>" />
+			</td>
+			<td class="columnname">
+				<label>Leaves/Fronds</label>
+			</td>
+			<td class="inputtd" >
+				<input name="ileaves" value="<?php echo $result->leaves;?>" />				
+			</td>
+			
+		</tr>		
+
+
+		<tr>
+			
+			<td class="columnname">
+				<label>Flowers</label>
+			</td>
+			<td class="inputtd">
+				<input name="iflowers" value="<?php echo $result->flowers;?>" />
+			</td>
+			<td class="columnname">
+				<label>Fruits/Seeds</label>
+			</td>
+			<td class="inputtd" >
+				<input name="ifruits" value="<?php echo $result->fruits;?>" />
+			</td>
+			
+		</tr>		
+		<tr class="altrow">
+			
+			<td class="columnname">
+				<label>Uses</label>
+			</td>
+			<td class="inputtd" colspan="3">
+				<input name="iuses" value="<?php echo $result->uses;?>" />
+			</td>
+
+			
+		</tr>
+		
 	</tbody>
 	
 </table><!--end of 1st table-->
 
 <div id="right_panel">
+	<div class="deletedivcont">
+		<input  type='submit'/>
+	</div>
 	<div id="picture_container">
 		
 			<input type="file" name="userfile" size="20" />
@@ -367,22 +406,22 @@ foreach ($results as $result) {
 		</div>
 		
 	</div>
+	<div class="mapcontdiv">
 	<div id="map_container">
 		
 		
 		
+	</div>
 	</div>
 </div>
 	<script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?sensor=false">
     </script>
     <?php
-    	$long=14.1331;
-		$lat=121.2015;
+    	$lat=$result->Latitude;
+		$long=$result->Longitude;
 		$longlat=$long.",".$lat;
-		$mlong= 14.21;
-		$mlat= 121.211;
-		$marker=$long.",".$lat;
+		$marker=$longlat;
 		//echo $marker;
     ?>
     <script type="text/javascript">
@@ -412,8 +451,8 @@ foreach ($results as $result) {
 
 
 <?php
-}
+}//end of for each
 echo form_close();
-//end of for each
+
 include("footer.php");
 ?>	

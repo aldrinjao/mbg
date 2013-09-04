@@ -103,11 +103,10 @@ class Add_entry extends CI_Controller {
 					$this->input->post('imonthcollected'),
 					$this->input->post('idaycollected'),
 					$this->input->post('icommonname'),
-					$this->input->post('ibasis'),
+					$this->input->post('isynonym'),
 					$this->input->post('ireference'),
 					$this->input->post('iocean'),
 					$this->input->post('icountry'),
-					$this->input->post('iprovince'),
 					$this->input->post('ithreat'),
 					$this->input->post('ith'),
 					$this->input->post('idbh'),
@@ -120,7 +119,16 @@ class Add_entry extends CI_Controller {
 					$this->input->post('idplanted'),
 					$this->input->post('iseedyear'),
 					$this->input->post('idistribution'),
-					$this->input->post('icharac')
+					$this->input->post('ihabit'),
+					$this->input->post('ileaves'),
+					$this->input->post('iflowers'),
+					$this->input->post('ifruits'),
+					$this->input->post('iuses'),
+					$this->input->post('istateprovince'),
+					$this->input->post('ilocality'),
+					$this->input->post('inationalstat'),
+					$this->input->post('inativestat')
+					
 					
 					);
 		
@@ -157,7 +165,7 @@ function edit(){
 
 function update_entry()
 {
-	
+		$filepath="";
 		$data['inserted'] = FALSE;
 		$data['file_error'] = FALSE;
 		$data['input_error'] = FALSE;
@@ -207,15 +215,8 @@ function update_entry()
 			}
 			else
 			{
-				
 					
-				$temp= $this->mbg_model->getSingleEntry($id);
-					
-					foreach($temp as $item) {
-						$filepath=$item->SpeciesPic;
-						echo $filepath;
-					}
-						
+			
 				if($this->upload->do_upload()){
 					
 					$uploaddata=$this->upload->data();
@@ -250,11 +251,10 @@ function update_entry()
 					$this->input->post('imonthcollected'),
 					$this->input->post('idaycollected'),
 					$this->input->post('icommonname'),
-					$this->input->post('ibasis'),
+					$this->input->post('isynonym'),
 					$this->input->post('ireference'),
 					$this->input->post('iocean'),
 					$this->input->post('icountry'),
-					$this->input->post('iprovince'),
 					$this->input->post('ithreat'),
 					$this->input->post('ith'),
 					$this->input->post('idbh'),
@@ -267,7 +267,16 @@ function update_entry()
 					$this->input->post('idplanted'),
 					$this->input->post('iseedyear'),
 					$this->input->post('idistribution'),
-					$this->input->post('icharac')
+					$this->input->post('ihabit'),
+					$this->input->post('ileaves'),
+					$this->input->post('ifruits'),
+					$this->input->post('iuses'),
+					$this->input->post('iflowers'),
+					$this->input->post('istateprovince'),
+					$this->input->post('ilocality'),
+					$this->input->post('inationalstat'),
+					$this->input->post('inativestat'),
+					$this->input->post('iseedyear')
 					
 					
 					);

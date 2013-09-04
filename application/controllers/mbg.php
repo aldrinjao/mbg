@@ -27,6 +27,7 @@ class Mbg extends CI_Controller {
 		$id = $id2 % $this->mbg_model->getNumberofEntries(); 
 		$searchresults = $this->mbg_model->getSingleEntry($id);
 		$data['results'] = $searchresults;
+		$data['home']= TRUE; 
 		$this->load->view('entry_view',$data);
 		
 	}
