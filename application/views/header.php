@@ -16,7 +16,7 @@
 <div id = "headerdiv">
 
 <div id="mast" >
-	Makiling Botanic Gardens
+	<!--Makiling Botanic Gardens-->
 	
 </div>
 
